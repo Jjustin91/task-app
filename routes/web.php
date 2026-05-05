@@ -4,6 +4,10 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
 
+Route::get('/', function () {
+    return view('welcome');
+});
+
 Route::get('/dashboard', [TaskController::class, 'index'])
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
